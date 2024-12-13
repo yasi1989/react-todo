@@ -1,6 +1,11 @@
 const StatusButton = ({status}:{status: boolean}) => {
+    const buttonProps = status ?
+        { text: "completed", color: "bg-green-200"} :
+        { text: "pending", color: "bg-blue-200"};
   return (
-    status ? <button className="py-2 px-4 bg-green-200 text-sm rounded-md">completed</button> : <button className="py-2 px-4 bg-blue-200 text-sm rounded-md">pending</button>
+    <button className={`py-2 px-4 text-sm rounded-md ${buttonProps.color}`}>
+      {buttonProps.text}
+    </button>
   )
 }
 
